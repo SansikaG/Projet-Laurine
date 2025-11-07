@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youy – Salon de Thé & Beauté Naturelle</title>
+
+  <style>
+    /* 🌿 Couleurs naturelles */
+    :root {
+      --vert-foret: #4c6a4f;
+      --vert-sauge: #91a98b;
+      --bois: #c7aa83;
+      --beige: #f1ede6;
+      --texte: #2f2f2f;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--texte);
+      background-color: var(--beige);
+      overflow-x: hidden;
+    }
+
+    /* 🎬 Vidéo de fond */
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.55);
+    }
+
+    header {
+      text-align: center;
+      color: white;
+      padding: 4em 1em 2em 1em;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(4px);
+    }
+
+    header h1 {
+      font-size: 3em;
+      letter-spacing: 2px;
+      margin-bottom: 0.3em;
+    }
+
+    header p {
+      font-size: 1.3em;
+      font-style: italic;
+      color: #e6e6e6;
+    }
+
+    nav {
+      background-color: rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2em;
+      padding: 1em;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(8px);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--bois);
+    }
+
+    section {
+      padding: 4em 8%;
+      max-width: 1200px;
+      margin: auto;
+      background-color: rgba(255,255,255,0.8);
+      border-radius: 20px;
+      margin-top: 3em;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5em;
+      color: var(--vert-foret);
+      margin-bottom: 1em;
+    }
+
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2em;
+    }
+
+    .intro img {
+      width: 45%;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .intro-text {
+      flex: 1;
+      font-size: 1.3em;
+      line-height: 1.7em;
+      color: #3a3a3a;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2em;
+    }
+
+    .card {
+      background-color: #ffffffd8;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.5em;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      color: var(--vert-foret);
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    footer {
+      background: var(--vert-foret);
+      color: white;
+      text-align: center;
+      padding: 2em;
+      margin-top: 4em;
+      letter-spacing: 1px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      max-width: 500px;
+      margin: 2em auto;
+    }
+
+    input, textarea, button {
+      padding: 1em;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 1.1em;
+    }
+
+    button {
+      background-color: var(--vert-foret);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #2f4f2e;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- 🎬 Vidéo d’arrière-plan -->
+  <video autoplay muted loop class="background-video">
+    <source src="https://videos.pexels.com/video-files/856872/856872-hd_1920_1080_25fps.mp4" type="video/mp4">
+  </video>
+
+  <header>
+    <h1>🌿 Youy – Salon de Thé & Beauté Naturelle</h1>
+    <p>Beauté, nature et sérénité au cœur d’un jardin vivant</p>
+  </header>
+
+  <nav>
+    <a href="#about">Accueil</a>
+    <a href="#prestations">Beauté</a>
+    <a href="#menu">Café & Thés</a>
+    <a href="#lecture">Coin Lecture</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <div class="intro">
+      <img src="IMG_1006.11.jpg" alt="Espace détente végétal Youy">
+      <div class="intro-text">
+        <h2>Bienvenue chez Youy</h2>
+        <p>
+          Plongez dans un univers où chaque détail respire la nature : les parfums d’herbes fraîches, 
+          la chaleur du bois et la lumière filtrée à travers les feuilles.  
+          Youy est un lieu vivant — à la fois salon de thé, espace bien-être et coin lecture — 
+          imaginé pour apaiser le corps et l’esprit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="prestations">
+    <h2>🌸 Nos Prestations Naturelles</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1599351430140-ec2b2c3c5051" alt="Soin visage botanique">
+        <div class="card-content">
+          <h3>Soin visage botanique</h3>
+          <p>Des extraits de plantes et huiles naturelles pour une peau éclatante et purifiée.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1619710966745-12d2b2b97c51" alt="Massage relaxant nature">
+        <div class="card-content">
+          <h3>Massage végétal</h3>
+          <p>Un voyage au cœur de la nature : senteurs boisées, huiles bio et ambiance apaisante.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1556228720-195a672e4a03" alt="Beauté des mains naturelle">
+        <div class="card-content">
+          <h3>Beauté des mains</h3>
+          <p>Des soins doux et des couleurs inspirées de la terre et des fleurs séchées.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <h2>🍵 Nos Cafés & Thés du Jardin</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Matcha mousseux">
+        <div class="card-content">
+          <h3>Matcha mousseux</h3>
+          <p>Thé vert japonais, mousse légère, un goût d’herbe et de sérénité.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1535914254981-b5012eebbd15" alt="Tisane du jardin">
+        <div class="card-content">
+          <h3>Tisane du Jardin</h3>
+          <p>Mélange de verveine, menthe et fleurs séchées — apaisement garanti.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1586201375761-83865001e17d" alt="Cappuccino nature">
+        <div class="card-content">
+          <h3>Cappuccino Forêt</h3>
+          <p>Un café crémeux avec une touche de sirop de pin et un soupçon de vanille.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lecture">
+    <h2>📚 Le Coin Lecture</h2>
+    <div class="intro">
+      <img src="IMG_1001.11.jpg" alt="Coin lecture végétal Youy">
+      <div class="intro-text">
+        <p>
+          Installez-vous au cœur du jardin intérieur.  
+          Feuilletez un roman, savourez un thé, écoutez la pluie tomber doucement.  
+          Chez Youy, le temps ralentit, les esprits s’apaisent et
