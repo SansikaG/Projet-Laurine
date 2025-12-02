@@ -12,7 +12,7 @@
   --vert-clair: #7BAA78;
   --vert-sauge: #6E8B6C;
   --vert-fonce: #3F5B3A;
-  --bois: #caa57a;
+  --bois: #caa57a; /* Beige/marron clair */
   --bois-fonce: #9c774a;
   --beige: #F3EFE6;
   --texte: #1f1f1f;
@@ -83,7 +83,7 @@ nav a {
 }
 
 nav a:hover {
-  background: var(--vert-sauge);
+  background: var(--bois);
   color: white;
 }
 
@@ -230,29 +230,25 @@ button:hover {
   background: var(--vert-fonce);
 }
 
-/* ----------- MODIFICATIONS ACCUEIL ----------- */
+/* ACCUEIL SANS FOND BLANC */
 #about {
   background: transparent !important;
   box-shadow: none !important;
   border: none !important;
 }
 
-#about::before,
-#about::after {
-  display: none !important;
-}
+#about::before, #about::after {display: none !important;}
 
 #about .intro-text {
   color: white !important;
   text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- VIDEO FOND FORET CALME -->
+<!-- VIDEO FOND -->
 <video autoplay muted loop class="background-video">
   <source src="https://videos.pexels.com/video-files/854647/854647-hd_1920_1080_25fps.mp4" type="video/mp4">
 </video>
@@ -281,172 +277,126 @@ button:hover {
   </div>
 </section>
 
-<!-- PRESTATIONS -->
+<!-- BEAUTÉ -->
 <section id="prestations">
   <h2>Nos Prestations Beauté</h2>
+
   <div class="grid">
 
-    <!-- SOIN VISAGE -->
+    <!-- ANCIENNES PRESTATIONS -->
     <div class="card">
       <img src="https://images.pexels.com/photos/6621463/pexels-photo-6621463.jpeg">
       <div class="card-content">
         <h3>Soin Visage</h3>
-        <p>Hydratation naturelle et éclat revitalisant.</p>
       </div>
     </div>
 
-    <!-- MASSAGE RELAXANT -->
     <div class="card">
       <img src="https://images.pexels.com/photos/6621464/pexels-photo-6621464.jpeg">
       <div class="card-content">
         <h3>Massage Relaxant</h3>
-        <p>Détente profonde grâce aux huiles végétales.</p>
       </div>
     </div>
 
     <!-- NOUVELLES PRESTATIONS -->
     <div class="card">
       <img src="https://images.pexels.com/photos/3997983/pexels-photo-3997983.jpeg">
-      <div class="card-content">
-        <h3>Épilation Sourcils</h3>
-        <p>Restructuration précise pour un regard défini.</p>
-      </div>
+      <div class="card-content"><h3>Épilation Sourcils</h3></div>
     </div>
 
     <div class="card">
       <img src="https://images.pexels.com/photos/3993447/pexels-photo-3993447.jpeg">
-      <div class="card-content">
-        <h3>Épilation Lèvre</h3>
-        <p>Résultat net et impeccable.</p>
-      </div>
+      <div class="card-content"><h3>Épilation Lèvre</h3></div>
     </div>
 
     <div class="card">
       <img src="https://images.pexels.com/photos/3997997/pexels-photo-3997997.jpeg">
-      <div class="card-content">
-        <h3>Teinture Sourcils</h3>
-        <p>Couleur naturelle et harmonieuse.</p>
-      </div>
+      <div class="card-content"><h3>Teinture Sourcils</h3></div>
     </div>
 
     <div class="card">
       <img src="https://images.pexels.com/photos/5240637/pexels-photo-5240637.jpeg">
-      <div class="card-content">
-        <h3>Rehaussement de Cils</h3>
-        <p>Courbure élégante et regard ouvert.</p>
-      </div>
+      <div class="card-content"><h3>Rehaussement de Cils</h3></div>
     </div>
 
     <div class="card">
       <img src="https://images.pexels.com/photos/4049746/pexels-photo-4049746.jpeg">
-      <div class="card-content">
-        <h3>Teinture de Cils</h3>
-        <p>Intensité et profondeur naturelle.</p>
-      </div>
+      <div class="card-content"><h3>Teinture de Cils</h3></div>
     </div>
 
     <div class="card">
       <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg">
-      <div class="card-content">
-        <h3>Manucure</h3>
-        <p>Beauté des mains, douceur & soin.</p>
-      </div>
+      <div class="card-content"><h3>Manucure</h3></div>
     </div>
 
     <div class="card">
       <img src="https://images.pexels.com/photos/7594088/pexels-photo-7594088.jpeg">
-      <div class="card-content">
-        <h3>Vernis Simple</h3>
-        <p>Application soignée et élégante.</p>
-      </div>
+      <div class="card-content"><h3>Vernis Simple</h3></div>
     </div>
 
     <div class="card">
       <img src="https://images.pexels.com/photos/7594147/pexels-photo-7594147.jpeg">
-      <div class="card-content">
-        <h3>Vernis Semi-Permanent</h3>
-        <p>Tenue longue durée et finition parfaite.</p>
-      </div>
+      <div class="card-content"><h3>Vernis Semi-Permanent</h3></div>
     </div>
 
     <div class="card">
       <img src="https://images.pexels.com/photos/3865673/pexels-photo-3865673.jpeg">
-      <div class="card-content">
-        <h3>Massage Crânien</h3>
-        <p>Relaxation profonde & apaisement immédiat.</p>
-      </div>
+      <div class="card-content"><h3>Massage Crânien</h3></div>
     </div>
 
   </div>
 </section>
 
-<!-- MENU -->
+<!-- A LA CARTE -->
 <section id="menu">
   <h2>À la Carte – Café & Thés</h2>
   <div class="grid">
-    <div class="card">
-      <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg">
-      <div class="card-content">
-        <h3>Expresso</h3>
-        <p>Café intense et énergisant.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg">
-      <div class="card-content">
-        <h3>Cappuccino</h3>
-        <p>Délicieux cappuccino crémeux parfumé.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.pexels.com/photos/585750/pexels-photo-585750.jpeg">
-      <div class="card-content">
-        <h3>Matcha Latte</h3>
-        <p>Thé vert matcha onctueux, douceur japonaise.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.pexels.com/photos/745988/pexels-photo-745988.jpeg">
-      <div class="card-content">
-        <h3>Thé Fruits Rouges</h3>
-        <p>Infusion parfumée, douce et naturelle.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg">
-      <div class="card-content">
-        <h3>Chocolat Chaud Maison</h3>
-        <p>Crémeux, gourmand & cacao naturel.</p>
-      </div>
-    </div>
+
+    <!-- NOUVELLES BOISSONS -->
+    <div class="card"><img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg"><div class="card-content"><h3>Café</h3></div></div>
+
+    <div class="card"><img src="https://images.pexels.com/photos/4109743/pexels-photo-4109743.jpeg"><div class="card-content"><h3>Café au Lait</h3></div></div>
+
+    <div class="card"><img src="https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg"><div class="card-content"><h3>Cappuccino</h3></div></div>
+
+    <div class="card"><img src="https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg"><div class="card-content"><h3>Chocolat Chaud</h3></div></div>
+
+    <div class="card"><img src="https://images.pexels.com/photos/4109994/pexels-photo-4109994.jpeg"><div class="card-content"><h3>Chocolat Signature</h3></div></div>
+
+    <div class="card"><img src="https://images.pexels.com/photos/47013/pexels-photo-47013.jpeg"><div class="card-content"><h3>Macchiato</h3></div></div>
+
+    <div class="card"><img src="https://images.pexels.com/photos/585750/pexels-photo-585750.jpeg"><div class="card-content"><h3>Matcha</h3></div></div>
+
+    <div class="card"><img src="https://images.pexels.com/photos/1603901/pexels-photo-1603901.jpeg"><div class="card-content"><h3>Matcha Vanille</h3></div></div>
+
+    <div class="card"><img src="https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg"><div class="card-content"><h3>Café Noisette</h3></div></div>
+
+    <div class="card"><img src="https://images.pexels.com/photos/6205502/pexels-photo-6205502.jpeg"><div class="card-content"><h3>Chaï Latte</h3></div></div>
+
+    <div class="card"><img src="https://images.pexels.com/photos/47062/pexels-photo-47062.jpeg"><div class="card-content"><h3>Chaï Latte Vanille</h3></div></div>
+
+  </div>
+
+  <h2 style="margin-top: 2em;">Options Vegan</h2>
+  <div class="grid">
+
+    <div class="card"><img src="https://images.pexels.com/photos/5930917/pexels-photo-5930917.jpeg"><div class="card-content"><h3>Lait de Soja</h3></div></div>
+
+    <div class="card"><img src="https://images.pexels.com/photos/41123/pexels-photo-41123.jpeg"><div class="card-content"><h3>Lait de Coco</h3></div></div>
+
+    <div class="card"><img src="https://images.pexels.com/photos/5946672/pexels-photo-5946672.jpeg"><div class="card-content"><h3>Lait d’Amande</h3></div></div>
+
   </div>
 </section>
 
 <!-- LECTURE -->
 <section id="lecture">
-  <h2>Coin Lecture – Ambiance Bohème</h2>
+  <h2>Coin Lecture</h2>
+
   <div class="grid">
-    <div class="card">
-      <img src="https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg">
-      <div class="card-content">
-        <h3>Romans Inspirants</h3>
-        <p>Bien-être, évasion & détente garantie.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.pexels.com/photos/942872/pexels-photo-942872.jpeg">
-      <div class="card-content">
-        <h3>Livres Nature & Plantes</h3>
-        <p>Botanique, forêt & spiritualité verte.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg">
-      <div class="card-content">
-        <h3>Revues Bien-être</h3>
-        <p>Lecture douce autour d’un thé chaud.</p>
-      </div>
-    </div>
+    <div class="card"><img src="https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg"><div class="card-content"><h3>Romans Inspirants</h3></div></div>
+    <div class="card"><img src="https://images.pexels.com/photos/942872/pexels-photo-942872.jpeg"><div class="card-content"><h3>Nature & Plantes</h3></div></div>
+    <div class="card"><img src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg"><div class="card-content"><h3>Revues Bien-Être</h3></div></div>
   </div>
 </section>
 
@@ -462,7 +412,7 @@ button:hover {
 </section>
 
 <footer>
-  © 2025 – Papothé & Chouchouthé • Salon de Thé & Beauté Naturelle  
+  © 2025 – Papothé & Chouchouthé  
 </footer>
 
 <script>
@@ -477,13 +427,13 @@ function showSection(id) {
 links.forEach(link => {
   link.addEventListener("click", () => {
     links.forEach(l => l.style.background = "transparent");
-    link.style.background = "#ff99c8";
+    link.style.background = "var(--bois)";
     link.style.color = "white";
     showSection(link.getAttribute("href"));
   });
 });
 
-// Afficher Accueil par défaut
+// Accueil par défaut
 showSection("#about");
 </script>
 
