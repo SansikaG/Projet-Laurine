@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Youy – Salon de Thé & Beauté Naturelle</title>
+<title>Papothé & Chouchouthé – Salon de Thé & Beauté Naturelle</title>
 
 <style>
 
@@ -100,26 +100,25 @@ section {
 }
 
 /* STICKERS FEUILLES */
-section::before {
-  content: "";
-  position: absolute;
-  top: -25px;
-  left: -25px;
-  width: 70px;
-  height: 70px;
-  background: url("https://cdn-icons-png.flaticon.com/512/7659/7659368.png") no-repeat center/contain;
-  opacity: 0.8;
-}
-
+section::before,
 section::after {
   content: "";
   position: absolute;
-  bottom: -25px;
-  right: -25px;
   width: 70px;
   height: 70px;
-  background: url("https://cdn-icons-png.flaticon.com/512/7659/7659354.png") no-repeat center/contain;
   opacity: 0.8;
+}
+
+section::before {
+  top: -25px;
+  left: -25px;
+  background: url("https://cdn-icons-png.flaticon.com/512/7659/7659368.png") no-repeat center/contain;
+}
+
+section::after {
+  bottom: -25px;
+  right: -25px;
+  background: url("https://cdn-icons-png.flaticon.com/512/7659/7659354.png") no-repeat center/contain;
 }
 
 h2 {
@@ -232,8 +231,6 @@ button:hover {
 }
 
 /* ----------- MODIFICATIONS ACCUEIL ----------- */
-
-/* ENLEVER LE FOND BLANC DE L'ACCUEIL */
 #about {
   background: transparent !important;
   box-shadow: none !important;
@@ -261,8 +258,8 @@ button:hover {
 </video>
 
 <header>
-  <h1>Youy – Salon de Thé & Beauté Naturelle</h1>
-  <p>Beauté, nature & sérénité sous un même toit</p>
+  <h1>Papothé & Chouchouthé</h1>
+  <p>Beauté, douceur & thés parfumés</p>
 </header>
 
 <nav>
@@ -278,8 +275,8 @@ button:hover {
   <div class="intro">
     <img src="https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg">
     <div class="intro-text">
-      <h2>Bienvenue chez Youy</h2>
-      <p>Un lieu apaisant où l’esprit cabane rencontre la verdure, le bois et la douceur. Entre thés parfumés, soins naturels et ambiance forêt, vous êtes ici chez vous.</p>
+      <h2>Bienvenue chez Papothé & Chouchouthé</h2>
+      <p>Un cocon chaleureux où se rencontrent thé, détente et soins doux pour l'âme et le corps.</p>
     </div>
   </div>
 </section>
@@ -288,6 +285,8 @@ button:hover {
 <section id="prestations">
   <h2>Nos Prestations Beauté</h2>
   <div class="grid">
+
+    <!-- SOIN VISAGE -->
     <div class="card">
       <img src="https://images.pexels.com/photos/6621463/pexels-photo-6621463.jpeg">
       <div class="card-content">
@@ -295,6 +294,8 @@ button:hover {
         <p>Hydratation naturelle et éclat revitalisant.</p>
       </div>
     </div>
+
+    <!-- MASSAGE RELAXANT -->
     <div class="card">
       <img src="https://images.pexels.com/photos/6621464/pexels-photo-6621464.jpeg">
       <div class="card-content">
@@ -302,6 +303,80 @@ button:hover {
         <p>Détente profonde grâce aux huiles végétales.</p>
       </div>
     </div>
+
+    <!-- NOUVELLES PRESTATIONS -->
+    <div class="card">
+      <img src="https://images.pexels.com/photos/3997983/pexels-photo-3997983.jpeg">
+      <div class="card-content">
+        <h3>Épilation Sourcils</h3>
+        <p>Restructuration précise pour un regard défini.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/3993447/pexels-photo-3993447.jpeg">
+      <div class="card-content">
+        <h3>Épilation Lèvre</h3>
+        <p>Résultat net et impeccable.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/3997997/pexels-photo-3997997.jpeg">
+      <div class="card-content">
+        <h3>Teinture Sourcils</h3>
+        <p>Couleur naturelle et harmonieuse.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/5240637/pexels-photo-5240637.jpeg">
+      <div class="card-content">
+        <h3>Rehaussement de Cils</h3>
+        <p>Courbure élégante et regard ouvert.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/4049746/pexels-photo-4049746.jpeg">
+      <div class="card-content">
+        <h3>Teinture de Cils</h3>
+        <p>Intensité et profondeur naturelle.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg">
+      <div class="card-content">
+        <h3>Manucure</h3>
+        <p>Beauté des mains, douceur & soin.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/7594088/pexels-photo-7594088.jpeg">
+      <div class="card-content">
+        <h3>Vernis Simple</h3>
+        <p>Application soignée et élégante.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/7594147/pexels-photo-7594147.jpeg">
+      <div class="card-content">
+        <h3>Vernis Semi-Permanent</h3>
+        <p>Tenue longue durée et finition parfaite.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/3865673/pexels-photo-3865673.jpeg">
+      <div class="card-content">
+        <h3>Massage Crânien</h3>
+        <p>Relaxation profonde & apaisement immédiat.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -341,13 +416,13 @@ button:hover {
       <img src="https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg">
       <div class="card-content">
         <h3>Chocolat Chaud Maison</h3>
-        <p>Crémeux, gourmand & nappe au cacao naturel.</p>
+        <p>Crémeux, gourmand & cacao naturel.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COIN LECTURE -->
+<!-- LECTURE -->
 <section id="lecture">
   <h2>Coin Lecture – Ambiance Bohème</h2>
   <div class="grid">
@@ -355,14 +430,14 @@ button:hover {
       <img src="https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg">
       <div class="card-content">
         <h3>Romans Inspirants</h3>
-        <p>Sélection bien-être, calme & développement personnel.</p>
+        <p>Bien-être, évasion & détente garantie.</p>
       </div>
     </div>
     <div class="card">
       <img src="https://images.pexels.com/photos/942872/pexels-photo-942872.jpeg">
       <div class="card-content">
         <h3>Livres Nature & Plantes</h3>
-        <p>Botanique, jardin, forêt & spiritualité verte.</p>
+        <p>Botanique, forêt & spiritualité verte.</p>
       </div>
     </div>
     <div class="card">
@@ -387,7 +462,7 @@ button:hover {
 </section>
 
 <footer>
-  © 2025 – Youy • Salon de Thé & Beauté Naturelle  
+  © 2025 – Papothé & Chouchouthé • Salon de Thé & Beauté Naturelle  
 </footer>
 
 <script>
