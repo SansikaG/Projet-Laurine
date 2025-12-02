@@ -5,436 +5,879 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Papothé & Chouchouthé – Salon de Thé & Beauté Naturelle</title>
 
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
-
-/* PALETTE BOIS + VERT NATURE */
+/* PALETTE BOIS + VERT NATURE, STYLE MINIMALISTE */
 :root {
-  --vert-clair: #7BAA78;
-  --vert-sauge: #6E8B6C;
-  --vert-fonce: #3F5B3A;
-  --bois: #caa57a; /* Beige/marron clair */
-  --bois-fonce: #9c774a;
-  --beige: #F3EFE6;
-  --texte: #1f1f1f;
-  --fond: #f8f6f1;
+  --bois-clair: #dcb892;
+  --bois: #b98556;
+  --bois-fonce: #8b6235;
+  --vert-sauge: #7f9c7a;
+  --vert-fonce: #4b6444;
+  --beige: #f5efe6;
+  --fond: #f2ece3;
+  --texte: #2e2620;
+  --gris-clair: #e0d7cb;
+  --blanc: #ffffff;
 }
 
-/* STYLE GLOBAL */
-body {
+/* RESET SIMPLE */
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+/* GLOBAL */
+body {
   font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #f7f1e8 0%, #f0e5d7 40%, #f5efe6 100%);
   color: var(--texte);
-  background-color: var(--fond);
-  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* VIDEO DE FOND */
-.background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  filter: brightness(0.55) saturate(1.1);
+/* CONTAINER GLOBAL CENTRÉ */
+.wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
 }
 
-/* HEADER */
+/* HEADER MINIMALISTE */
 header {
-  text-align: center;
-  color: white;
-  padding: 3em 1em;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(4px);
+  padding: 1.7rem 1.5rem 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(245, 239, 230, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(139, 98, 53, 0.08);
 }
 
-header h1 {
-  font-size: 2.7em;
-  margin: 0 0 0.3em 0;
-  letter-spacing: 1px;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+.header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
 }
 
-header p {
-  font-size: 1.2em;
-  opacity: 0.9;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #f3e3d0 55%, #b98556 100%);
+  border: 1px solid rgba(139, 98, 53, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--vert-fonce);
+}
+
+.brand h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--texte);
+}
+
+.brand span {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(46, 38, 32, 0.7);
+  margin-top: 0.1rem;
 }
 
 /* NAVIGATION */
 nav {
   display: flex;
-  justify-content: center;
-  gap: 2em;
-  padding: 1em;
-  backdrop-filter: blur(7px);
-  background: rgba(255,255,255,0.15);
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  gap: 0.8rem;
+  flex-wrap: wrap;
 }
 
 nav a {
-  color: var(--bois);
   text-decoration: none;
-  font-size: 1.15em;
-  font-weight: 700;
-  padding: 0.5em 1em;
-  border-radius: 6px;
-  transition: 0.3s;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: 999px;
+  color: rgba(46, 38, 32, 0.9);
+  border: 1px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
 nav a:hover {
-  background: var(--bois);
-  color: white;
+  border-color: rgba(139, 98, 53, 0.25);
+  transform: translateY(-1px);
 }
 
-/* SECTIONS */
-section {
-  display: none;
-  padding: 4em 10%;
-  margin: 2.5em auto;
-  max-width: 1500px;
-  background: rgba(255,255,255,0.94);
-  border-radius: 18px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  position: relative;
+nav a.active {
+  background: linear-gradient(135deg, var(--bois-clair), var(--bois));
+  color: #fff;
 }
 
-/* STICKERS FEUILLES */
-section::before,
-section::after {
-  content: "";
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  opacity: 0.8;
-}
-
-section::before {
-  top: -25px;
-  left: -25px;
-  background: url("https://cdn-icons-png.flaticon.com/512/7659/7659368.png") no-repeat center/contain;
-}
-
-section::after {
-  bottom: -25px;
-  right: -25px;
-  background: url("https://cdn-icons-png.flaticon.com/512/7659/7659354.png") no-repeat center/contain;
-}
-
-h2 {
-  text-align: center;
-  font-size: 2.1em;
-  color: var(--vert-fonce);
-  margin-bottom: 1em;
-  font-weight: 700;
-}
-
-/* INTRO */
-.intro {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
+/* HERO – ACCUEIL */
+.hero {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2.5rem;
   align-items: center;
 }
 
-.intro img {
-  width: 45%;
-  border-radius: 14px;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+.hero-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  color: var(--texte);
+  margin-bottom: 0.8rem;
 }
 
-.intro-text {
-  flex: 1;
-  font-size: 1.15em;
-  line-height: 1.7em;
-  color: #444;
+.hero-text p {
+  color: rgba(46, 38, 32, 0.8);
+  margin-bottom: 1.5rem;
 }
 
-/* GRID */
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.tag {
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: #f0e5d7;
+  color: rgba(46, 38, 32, 0.85);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.btn {
+  border-radius: 999px;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--bois), var(--bois-fonce));
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(113, 77, 43, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(113, 77, 43, 0.45);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--texte);
+  border: 1px solid rgba(139, 98, 53, 0.4);
+}
+
+.btn-outline:hover {
+  background: #f1e3d5;
+}
+
+/* HERO VISUEL */
+.hero-visual {
+  position: relative;
+}
+
+.hero-card {
+  background: #f9f3ea;
+  border-radius: 22px;
+  border: 1px solid rgba(139, 98, 53, 0.18);
+  padding: 1rem;
+  box-shadow: 0 18px 40px rgba(101, 73, 40, 0.25);
+}
+
+.hero-image {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.8s ease;
+}
+
+.hero-card:hover .hero-image img {
+  transform: scale(1.03);
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(25,18,12,0.65), transparent 60%);
+}
+
+.hero-image-caption {
+  position: absolute;
+  left: 1.3rem;
+  bottom: 1.1rem;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero-image-caption span {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.hero-image-caption strong {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+}
+
+.hero-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.8rem;
+  font-size: 0.9rem;
+  color: rgba(46, 38, 32, 0.9);
+}
+
+.hero-detail-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hero-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #dbe8d7 55%, #7f9c7a 100%);
+  border: 1px solid rgba(127, 156, 122, 0.5);
+}
+
+.hero-price {
+  text-align: right;
+}
+
+/* SECTIONS GÉNÉRALES */
+section {
+  padding: 2rem 0 2.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+  color: var(--texte);
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: rgba(46, 38, 32, 0.72);
+}
+
+.section-accent {
+  width: 40px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--bois), var(--vert-sauge));
+  margin: 0.7rem auto 0;
+}
+
+/* GRID CARDS */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.6rem;
 }
 
 .card {
-  background: white;
-  border-radius: 14px;
+  background: var(--blanc);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 3px solid var(--beige);
+  border: 1px solid rgba(139, 98, 53, 0.16);
+  box-shadow: 0 12px 25px rgba(116, 84, 49, 0.12);
+  transform: translateY(18px);
+  opacity: 0;
+  transition: transform 0.4s ease, box-shadow 0.25s ease, opacity 0.4s ease, border-color 0.25s ease;
+}
+
+.card.visible {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.2);
+  box-shadow: 0 18px 38px rgba(116, 84, 49, 0.2);
+  border-color: rgba(139, 98, 53, 0.35);
 }
 
 .card img {
   width: 100%;
-  height: 200px;
+  height: 190px;
   object-fit: cover;
 }
 
 .card-content {
-  padding: 1.3em;
-  text-align: center;
+  padding: 1rem 1.1rem 1.15rem;
 }
 
 .card-content h3 {
-  font-size: 1.35em;
-  margin-bottom: 0.5em;
-  color: var(--vert-fonce);
-  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+  color: var(--texte);
+}
+
+.card-line {
+  font-size: 0.85rem;
+  color: rgba(46, 38, 32, 0.75);
+}
+
+.card-tag {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: #f3ece2;
+  color: rgba(46, 38, 32, 0.75);
+}
+
+/* SECTION CONTACT */
+.contact-layout {
+  max-width: 780px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1.8rem;
+}
+
+.contact-text {
+  font-size: 0.95rem;
+  color: rgba(46, 38, 32, 0.78);
+}
+
+.contact-text p + p {
+  margin-top: 0.7rem;
+}
+
+.contact-highlight {
+  margin-top: 1rem;
+  padding-left: 0.7rem;
+  border-left: 3px solid var(--vert-sauge);
+  font-size: 0.9rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+label {
+  font-size: 0.85rem;
+  color: rgba(46, 38, 32, 0.8);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #d2c6b7;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: #faf6f0;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+button[type="submit"] {
+  align-self: flex-start;
 }
 
 /* FOOTER */
 footer {
-  background: var(--vert-fonce);
-  color: white;
+  border-top: 1px solid rgba(139, 98, 53, 0.18);
+  padding: 1.8rem 1.5rem 2rem;
+  font-size: 0.85rem;
+  color: rgba(46, 38, 32, 0.75);
   text-align: center;
-  padding: 2.5em 1em;
-  font-size: 0.9em;
-  margin-top: 3em;
-  letter-spacing: 0.5px;
 }
 
-/* FORMULAIRE */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  max-width: 500px;
-  margin: auto;
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    order: -1;
+  }
 }
 
-input, textarea, button {
-  padding: 0.9em;
-  font-size: 1em;
-  border-radius: 8px;
-  border: 1px solid #bbb;
-  font-family: inherit;
-}
-
-button {
-  background: var(--vert-sauge);
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: 700;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background: var(--vert-fonce);
-}
-
-/* ACCUEIL SANS FOND BLANC */
-#about {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-#about::before, #about::after {display: none !important;}
-
-#about .intro-text {
-  color: white !important;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+@media (max-width: 640px) {
+  header {
+    padding-inline: 1rem;
+  }
+  .wrapper {
+    padding-inline: 1rem;
+  }
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- VIDEO FOND -->
-<video autoplay muted loop class="background-video">
-  <source src="https://videos.pexels.com/video-files/854647/854647-hd_1920_1080_25fps.mp4" type="video/mp4">
-</video>
-
 <header>
-  <h1>Papothé & Chouchouthé</h1>
-  <p>Beauté, douceur & thés parfumés</p>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-icon">☕</div>
+      <div>
+        <h1>Papothé &amp; Chouchouthé</h1>
+        <span>Salon de thé &amp; beauté naturelle</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#hero" class="active">Accueil</a>
+      <a href="#prestations">Beauté</a>
+      <a href="#menu">À la carte</a>
+      <a href="#lecture">Coin lecture</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<nav>
-  <a href="#about">Accueil</a>
-  <a href="#prestations">Beauté</a>
-  <a href="#menu">À la Carte</a>
-  <a href="#lecture">Coin Lecture</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<!-- ACCUEIL -->
-<section id="about">
-  <div class="intro">
-    <img src="https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg">
-    <div class="intro-text">
-      <h2>Bienvenue chez Papothé & Chouchouthé</h2>
-      <p>Un cocon chaleureux où se rencontrent thé, détente et soins doux pour l'âme et le corps.</p>
-    </div>
-  </div>
-</section>
-
-<!-- BEAUTÉ -->
-<section id="prestations">
-  <h2>Nos Prestations Beauté</h2>
-
-  <div class="grid">
-
-    <!-- ANCIENNES PRESTATIONS -->
-    <div class="card">
-      <img src="https://images.pexels.com/photos/6621463/pexels-photo-6621463.jpeg">
-      <div class="card-content">
-        <h3>Soin Visage</h3>
+<main class="wrapper">
+  <!-- HERO / ACCUEIL -->
+  <section id="hero" class="hero visible">
+    <div class="hero-text">
+      <h2>Un lieu doux, pensé comme une parenthèse.</h2>
+      <p>
+        Ici, on prend le temps : un thé chaud entre les mains, une lumière douce, un soin délicat.
+        Papothé &amp; Chouchouthé est un salon de thé et de beauté où l’on vient se poser, respirer
+        et se faire chouchouter.
+      </p>
+      <div class="hero-tags">
+        <span class="tag">Thés &amp; infusions d’exception</span>
+        <span class="tag">Soins visage &amp; massages</span>
+        <span class="tag">Ambiance bois &amp; plantes</span>
+      </div>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-go="#prestations">Découvrir les soins</button>
+        <button class="btn btn-outline" data-go="#menu">Voir la carte des boissons</button>
       </div>
     </div>
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/6621464/pexels-photo-6621464.jpeg">
-      <div class="card-content">
-        <h3>Massage Relaxant</h3>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-image">
+          <!-- Image principale : ambiance bois + thé + plantes -->
+          <img src="https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg" alt="Table en bois avec thé et plantes">
+          <div class="hero-image-caption">
+            <span>Instant détente</span>
+            <strong>Thé &amp; beauté, en douceur</strong>
+          </div>
+        </div>
+        <div class="hero-details">
+          <div class="hero-detail-left">
+            <div class="hero-dot"></div>
+            <div>
+              <div style="font-size:0.85rem;">Rituels cocooning sur rendez-vous</div>
+              <div style="font-size:0.8rem; opacity:0.8;">Du mardi au samedi</div>
+            </div>
+          </div>
+          <div class="hero-price">
+            <div style="font-size:0.75rem; opacity:0.7;">Soin visage à partir de</div>
+            <div style="font-weight:600;">45,00&nbsp;€</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEAUTÉ -->
+  <section id="prestations">
+    <div class="section-header">
+      <h2 class="section-title">Nos prestations beauté</h2>
+      <p class="section-subtitle">
+        Des soins pensés pour la peau, le corps et le mental, avec une attention particulière aux textures
+        et aux parfums naturels.
+      </p>
+      <div class="section-accent"></div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3738345/pexels-photo-3738345.jpeg" alt="Soin visage au spa">
+        <div class="card-content">
+          <h3>Soin visage signature</h3>
+          <p class="card-line">Nettoyage, massage, masque adapté à votre peau.</p>
+          <span class="card-tag">Éclat &amp; hydratation</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3738344/pexels-photo-3738344.jpeg" alt="Massage relaxant">
+        <div class="card-content">
+          <h3>Massage relaxant</h3>
+          <p class="card-line">Pressions douces, huiles tièdes, ambiance feutrée.</p>
+          <span class="card-tag">Déconnexion totale</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3738362/pexels-photo-3738362.jpeg" alt="Soin du regard">
+        <div class="card-content">
+          <h3>Beauté du regard</h3>
+          <p class="card-line">Sourcils, cils, teinture &amp; rehaussement.</p>
+          <span class="card-tag">Regard structuré</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3738355/pexels-photo-3738355.jpeg" alt="Manucure naturelle">
+        <div class="card-content">
+          <h3>Manucure naturelle</h3>
+          <p class="card-line">Mise en beauté des mains, vernis ou naturel.</p>
+          <span class="card-tag">Mains soignées</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3997985/pexels-photo-3997985.jpeg" alt="Massage crânien">
+        <div class="card-content">
+          <h3>Massage crânien</h3>
+          <p class="card-line">Relâche les tensions du cuir chevelu et de la nuque.</p>
+          <span class="card-tag">Lâcher-prise</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3738361/pexels-photo-3738361.jpeg" alt="Rituel complet spa">
+        <div class="card-content">
+          <h3>Rituel complet</h3>
+          <p class="card-line">Visage + corps, pour une vraie parenthèse.</p>
+          <span class="card-tag">2h de cocooning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A LA CARTE -->
+  <section id="menu">
+    <div class="section-header">
+      <h2 class="section-title">À la carte – Thés &amp; douceurs</h2>
+      <p class="section-subtitle">
+        Une sélection de boissons chaudes et fraîches, à déguster avant ou après un soin, ou simplement
+        pour le plaisir d’une pause.
+      </p>
+      <div class="section-accent"></div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg" alt="Thé chaud sur table en bois">
+        <div class="card-content">
+          <h3>Thés parfumés</h3>
+          <p class="card-line">Jasmin, agrumes, épices douces, vanille…</p>
+          <span class="card-tag">Feuilles entières</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg" alt="Café noir">
+        <div class="card-content">
+          <h3>Cafés de spécialité</h3>
+          <p class="card-line">Espresso, allongé, cappuccino, latte.</p>
+          <span class="card-tag">Origines sélectionnées</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1024359/pexels-photo-1024359.jpeg" alt="Chaï latte">
+        <div class="card-content">
+          <h3>Chaï maison</h3>
+          <p class="card-line">Recette maison, épices et lait au choix.</p>
+          <span class="card-tag">Confort absolu</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3738888/pexels-photo-3738888.jpeg" alt="Matcha latte">
+        <div class="card-content">
+          <h3>Matcha latte</h3>
+          <p class="card-line">Version classique, vanille ou noisette.</p>
+          <span class="card-tag">Énergie douce</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1666132/pexels-photo-1666132.jpeg" alt="Pâtisseries maison">
+        <div class="card-content">
+          <h3>Pâtisseries maison</h3>
+          <p class="card-line">Cake, tartelettes, biscuits de saison.</p>
+          <span class="card-tag">Recettes réconfortantes</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3738824/pexels-photo-3738824.jpeg" alt="Boisson glacée">
+        <div class="card-content">
+          <h3>Boissons glacées</h3>
+          <p class="card-line">Thé glacé, café frappé, matcha froid.</p>
+          <span class="card-tag">Idéales l’été</span>
+        </div>
       </div>
     </div>
 
-    <!-- NOUVELLES PRESTATIONS -->
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3997983/pexels-photo-3997983.jpeg">
-      <div class="card-content"><h3>Épilation Sourcils</h3></div>
+    <div class="section-header" style="margin-top:2.2rem;">
+      <h2 class="section-title" style="font-size:1.5rem;">Options végétales</h2>
+      <p class="section-subtitle">
+        Tous nos lattés et chocolats peuvent être préparés avec du lait végétal.
+      </p>
+      <div class="section-accent"></div>
     </div>
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3993447/pexels-photo-3993447.jpeg">
-      <div class="card-content"><h3>Épilation Lèvre</h3></div>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/5931267/pexels-photo-5931267.jpeg" alt="Lait d’avoine">
+        <div class="card-content">
+          <h3>Lait d’avoine</h3>
+          <p class="card-line">Texture douce et légèrement sucrée.</p>
+          <span class="card-tag">Idéal pour les lattés</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/5931269/pexels-photo-5931269.jpeg" alt="Lait de coco">
+        <div class="card-content">
+          <h3>Lait de coco</h3>
+          <p class="card-line">Notes exotiques pour vos boissons.</p>
+          <span class="card-tag">Parfait en chaï</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/4790051/pexels-photo-4790051.jpeg" alt="Lait d’amande">
+        <div class="card-content">
+          <h3>Lait d’amande</h3>
+          <p class="card-line">Léger, avec une touche de noisette.</p>
+          <span class="card-tag">Option sans lactose</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COIN LECTURE -->
+  <section id="lecture">
+    <div class="section-header">
+      <h2 class="section-title">Coin lecture</h2>
+      <p class="section-subtitle">
+        Une petite bibliothèque en libre-service : romans, nature, revues bien-être. On lit, on repose le livre
+        et on reprend une page un autre jour.
+      </p>
+      <div class="section-accent"></div>
     </div>
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3997997/pexels-photo-3997997.jpeg">
-      <div class="card-content"><h3>Teinture Sourcils</h3></div>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/2908984/pexels-photo-2908984.jpeg" alt="Romans sur une table">
+        <div class="card-content">
+          <h3>Romans inspirants</h3>
+          <p class="card-line">Histoires qui font du bien au moral.</p>
+          <span class="card-tag">Pour s’évader</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/2693212/pexels-photo-2693212.jpeg" alt="Livre sur la nature">
+        <div class="card-content">
+          <h3>Nature &amp; plantes</h3>
+          <p class="card-line">Jardin, plantes d’intérieur, écologie douce.</p>
+          <span class="card-tag">Retour au vivant</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg" alt="Revues bien-être">
+        <div class="card-content">
+          <h3>Revues bien-être</h3>
+          <p class="card-line">Magazines sur le corps, l’esprit et la lenteur.</p>
+          <span class="card-tag">Lecture légère</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header">
+      <h2 class="section-title">Contact &amp; réservation</h2>
+      <p class="section-subtitle">
+        Une question, une privatisation, un soin à offrir ou à s’offrir ? Écrivez-nous, nous vous répondons avec plaisir.
+      </p>
+      <div class="section-accent"></div>
     </div>
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/5240637/pexels-photo-5240637.jpeg">
-      <div class="card-content"><h3>Rehaussement de Cils</h3></div>
+    <div class="contact-layout">
+      <div class="contact-text">
+        <p>
+          Les rendez-vous beauté se font uniquement sur réservation, pour vous garantir un temps calme et
+          une attention entière. Vous pouvez aussi passer simplement pour un thé ou un café, selon nos horaires d’ouverture.
+        </p>
+        <p>
+          N’hésitez pas à préciser le jour, le créneau souhaité et le type de soin ou de boisson si vous avez déjà une idée.
+        </p>
+        <div class="contact-highlight">
+          📍 Papothé &amp; Chouchouthé – quartier à préciser<br>
+          ⏰ Du mardi au samedi • horaires à définir<br>
+          ✉️ Réponse sous 24h en général
+        </div>
+      </div>
+
+      <form>
+        <div>
+          <label for="nom">Nom complet</label>
+          <input id="nom" type="text" placeholder="Votre nom" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Votre email" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Votre demande, vos disponibilités, le soin ou la pause thé souhaitée…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+      </form>
     </div>
-
-    <div class="card">
-      <img src="https://images.pexels.com/photos/4049746/pexels-photo-4049746.jpeg">
-      <div class="card-content"><h3>Teinture de Cils</h3></div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg">
-      <div class="card-content"><h3>Manucure</h3></div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.pexels.com/photos/7594088/pexels-photo-7594088.jpeg">
-      <div class="card-content"><h3>Vernis Simple</h3></div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.pexels.com/photos/7594147/pexels-photo-7594147.jpeg">
-      <div class="card-content"><h3>Vernis Semi-Permanent</h3></div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3865673/pexels-photo-3865673.jpeg">
-      <div class="card-content"><h3>Massage Crânien</h3></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- A LA CARTE -->
-<section id="menu">
-  <h2>À la Carte – Café & Thés</h2>
-  <div class="grid">
-
-    <!-- NOUVELLES BOISSONS -->
-    <div class="card"><img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg"><div class="card-content"><h3>Café</h3></div></div>
-
-    <div class="card"><img src="https://images.pexels.com/photos/4109743/pexels-photo-4109743.jpeg"><div class="card-content"><h3>Café au Lait</h3></div></div>
-
-    <div class="card"><img src="https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg"><div class="card-content"><h3>Cappuccino</h3></div></div>
-
-    <div class="card"><img src="https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg"><div class="card-content"><h3>Chocolat Chaud</h3></div></div>
-
-    <div class="card"><img src="https://images.pexels.com/photos/4109994/pexels-photo-4109994.jpeg"><div class="card-content"><h3>Chocolat Signature</h3></div></div>
-
-    <div class="card"><img src="https://images.pexels.com/photos/47013/pexels-photo-47013.jpeg"><div class="card-content"><h3>Macchiato</h3></div></div>
-
-    <div class="card"><img src="https://images.pexels.com/photos/585750/pexels-photo-585750.jpeg"><div class="card-content"><h3>Matcha</h3></div></div>
-
-    <div class="card"><img src="https://images.pexels.com/photos/1603901/pexels-photo-1603901.jpeg"><div class="card-content"><h3>Matcha Vanille</h3></div></div>
-
-    <div class="card"><img src="https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg"><div class="card-content"><h3>Café Noisette</h3></div></div>
-
-    <div class="card"><img src="https://images.pexels.com/photos/6205502/pexels-photo-6205502.jpeg"><div class="card-content"><h3>Chaï Latte</h3></div></div>
-
-    <div class="card"><img src="https://images.pexels.com/photos/47062/pexels-photo-47062.jpeg"><div class="card-content"><h3>Chaï Latte Vanille</h3></div></div>
-
-  </div>
-
-  <h2 style="margin-top: 2em;">Options Vegan</h2>
-  <div class="grid">
-
-    <div class="card"><img src="https://images.pexels.com/photos/5930917/pexels-photo-5930917.jpeg"><div class="card-content"><h3>Lait de Soja</h3></div></div>
-
-    <div class="card"><img src="https://images.pexels.com/photos/41123/pexels-photo-41123.jpeg"><div class="card-content"><h3>Lait de Coco</h3></div></div>
-
-    <div class="card"><img src="https://images.pexels.com/photos/5946672/pexels-photo-5946672.jpeg"><div class="card-content"><h3>Lait d’Amande</h3></div></div>
-
-  </div>
-</section>
-
-<!-- LECTURE -->
-<section id="lecture">
-  <h2>Coin Lecture</h2>
-
-  <div class="grid">
-    <div class="card"><img src="https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg"><div class="card-content"><h3>Romans Inspirants</h3></div></div>
-    <div class="card"><img src="https://images.pexels.com/photos/942872/pexels-photo-942872.jpeg"><div class="card-content"><h3>Nature & Plantes</h3></div></div>
-    <div class="card"><img src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg"><div class="card-content"><h3>Revues Bien-Être</h3></div></div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact & Réservation</h2>
-  <form>
-    <input type="text" placeholder="Votre nom" required>
-    <input type="email" placeholder="Votre email" required>
-    <textarea rows="5" placeholder="Votre message"></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
+  </section>
+</main>
 
 <footer>
-  © 2025 – Papothé & Chouchouthé  
+  © 2025 – Papothé &amp; Chouchouthé • Tous droits réservés.
 </footer>
 
 <script>
-const links = document.querySelectorAll("nav a");
-const sections = document.querySelectorAll("section");
+// NAV : SCROLL DOUX + ACTIVATION
+const navLinks = document.querySelectorAll("nav a");
 
-function showSection(id) {
-  sections.forEach(sec => sec.style.display = "none");
-  document.querySelector(id).style.display = "block";
-}
+navLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href");
+    const targetEl = document.querySelector(targetId);
+    if (!targetEl) return;
 
-links.forEach(link => {
-  link.addEventListener("click", () => {
-    links.forEach(l => l.style.background = "transparent");
-    link.style.background = "var(--bois)";
-    link.style.color = "white";
-    showSection(link.getAttribute("href"));
+    targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    navLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
   });
 });
 
-// Accueil par défaut
-showSection("#about");
+// BOUTONS DU HERO
+document.querySelectorAll("[data-go]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const target = btn.getAttribute("data-go");
+    const link = document.querySelector(`nav a[href="${target}"]`);
+    if (link) link.click();
+  });
+});
+
+// ANIMATION D'APPARITION DES SECTIONS ET CARTES
+const sections = document.querySelectorAll("main section");
+const cards = document.querySelectorAll(".card");
+
+// observer pour sections
+const sectionObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+
+        // nav active selon la section en vue
+        const id = "#" + entry.target.id;
+        navLinks.forEach(l => {
+          if (l.getAttribute("href") === id) {
+            navLinks.forEach(n => n.classList.remove("active"));
+            l.classList.add("active");
+          }
+        });
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+// observer pour cartes
+const cardObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        cardObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+sections.forEach(sec => sectionObserver.observe(sec));
+cards.forEach(card => cardObserver.observe(card));
 </script>
 
 </body>
